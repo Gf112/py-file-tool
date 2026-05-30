@@ -41,6 +41,9 @@ def export_csv(stats,output_path):
 if args.command =="scan":
     stats=scan_directory(args.path)
     if args.output:
-        export_csv(stats,args.output)
+        try:
+            export_csv(stats,args.output)
+        except OSError:
+            print("导出失败：路径无效或无写入权限")
     else:
         print_stats(stats)
