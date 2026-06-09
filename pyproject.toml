@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-file-tool"
+version = "0.1.0"
+description = "文件分析工具 — 扫描目录，统计文件类型分布"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[project.scripts]
+file-scan = "main:main"
